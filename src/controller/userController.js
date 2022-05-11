@@ -81,7 +81,7 @@ const createUser = async (req, res) => {
         const findphoneno = await userModel.findOne({ phone: data.phone});
   
         if(findphoneno){
-          return res.status(404).send({ status:false,message: `Phone no. ${data.phone} Already Registered.Please,Give Another Phone.no`})
+          return res.status(400).send({ status:false,message: `Phone no. ${data.phone} Already Registered.Please,Give Another Phone.no`})
       }
   
         if (!data.email){
